@@ -9,8 +9,14 @@ import { UserService } from '../../services/user.service'
 export class UserComponent implements OnInit {
 
   contacts: any = [];
+  selectedContact: any; 
 
   constructor(public userService: UserService) { }
+
+  onSelect(contact: any): void {
+    this.selectedContact = contact;
+    console.log('hola')
+  }
 
   getAllUsers() {
     this.userService.getAll()
@@ -24,8 +30,15 @@ export class UserComponent implements OnInit {
       });
   }
 
-  // getOneUser(contact_id) {
-  //   this.userService.getOne(contact_id).su
+  // getOneUser(name) {
+  //   this.userService.getOne(name)
+  //   .subscribe(
+  //     (data) => {
+  //       this.contacts = data;
+  //     },
+  //     (error) => {
+  //       console.error(error);
+  //     });
   // }
 
 

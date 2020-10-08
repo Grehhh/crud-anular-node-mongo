@@ -1,9 +1,5 @@
-<div *ngFor="let contact of contacts">
+<div *ngFor="let contact of contacts" (click)="onSelect(contact)">
     <h1>{{ contact.name }}</h1>
-    <ul>
-        <li>{{ contact.email }}</li>
-        <li>{{ contact.gender }}</li>
-        <li>{{ contact.phone }}</li>
-    </ul>
-    
 </div>
+
+<app-user-details [contact]="selectedContact"></app-user-details>

@@ -41,24 +41,19 @@ exports.new = function(req,res) {
 
 //READ
 exports.view = function(req, res) {
-    Contact.findById(req.params.contact_id)
+    Contact.findOne({name: req.params.name})
     .then(result => {
         if (result === null) {
             return res.status(404).send({
                 message: "User not found"
             });
         } else {
-            res.send(result)
+            res.send(result);
         }
     })
     .catch(err => {
-        if (err.kind === 'ObjectId') {
-            return res.status(404).send({
-                message: "User not found with id " + userId
-            });
-        }
         return res.status(500).send({
-            message: "Something wrong getting user by id" + userId
+            message: "Something wrong getting user by name" + name
         });
     });
 };
