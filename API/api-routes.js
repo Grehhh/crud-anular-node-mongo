@@ -15,7 +15,7 @@ router.route('/contacts')
     .get(contactController.index)       //view all
     .post(contactController.new);       //create
 
-router.route('/contacts/:name')
+router.route('/contacts/:contact_id')
     .get(contactController.view)
     .patch(contactController.update)
     .put(contactController.update)
