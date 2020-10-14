@@ -4,6 +4,7 @@ import { UserComponent } from './components/user/user.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'contacts', pathMatch: 'full'},
   { path: 'contacts', component: UserComponent },
   { path: 'contact-detail/:_id', component: UserDetailsComponent }
 ]
