@@ -1,5 +1,6 @@
-<div *ngFor="let contact of contacts" (click)="onSelect(contact)">
+<div *ngFor="let contact of contacts">
     <h1>{{ contact.name }}</h1>
+    <a routerLink="/contact-detail/{{ contact._id }}">{{ contact._id }}</a>
 </div>
 
-<app-user-details [contact]="selectedContact"></app-user-details>
+<!-- <app-user-details [contact]="selectedContact"></app-user-details> -->

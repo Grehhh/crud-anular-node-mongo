@@ -16,6 +16,7 @@ export class UserService {
   }
 
   public getOne(contact_id): Observable<any> {
-    return this.http.get(this.url + '/contacts/' + contact_id)
+    const url = this.url + '/contacts/' + contact_id
+    return this.http.get(url)
   }
 }
