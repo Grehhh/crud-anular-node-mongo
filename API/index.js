@@ -9,7 +9,7 @@ const cors = require("cors");
 app.use(cors());
 
 app.use(bodyParser.urlencoded({
-    estended: true
+    extended: true
 }));
 app.use(bodyParser.json());
 mongoose.connect('mongodb://localhost/resthub',{useNewUrlParser: true});
